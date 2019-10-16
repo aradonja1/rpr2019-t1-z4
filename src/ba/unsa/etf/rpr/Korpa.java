@@ -17,7 +17,9 @@ public class Korpa {
         for(int i = 0; i < broj_artikala_u_korpi; i++) {
             if(artikli[i].getKod().equalsIgnoreCase(kod)) {
                 a = artikli[i];
+                for(int j = i; j < broj_artikala_u_korpi - 1; j++) artikli[j] = artikli[j + 1];
                 broj_artikala_u_korpi = broj_artikala_u_korpi - 1;
+                artikli[broj_artikala_u_korpi] = null;
             }
         }
         return a;

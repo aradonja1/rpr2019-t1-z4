@@ -22,7 +22,9 @@ public class Supermarket {
         for(int i = 0; i < broj_artikala_u_marketu; i++) {
             if(artikli[i].getKod().equalsIgnoreCase(kod)) {
                 a = artikli[i];
+                for(int j = i; j < broj_artikala_u_marketu - 1; j++) artikli[j] = artikli[j + 1];
                 broj_artikala_u_marketu = broj_artikala_u_marketu - 1;
+                artikli[broj_artikala_u_marketu] = null;
             }
         }
         return a;
